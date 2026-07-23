@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kiri Universe
 
-## Getting Started
+Kiri Universe 的单页官方粉丝入口。项目使用 Next.js、TypeScript、Tailwind CSS 与 Framer Motion 构建，支持响应式布局并可直接部署至 Vercel。
 
-First, run the development server:
+## 本地启动
+
+需要 Node.js 20.9 或更高版本。
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000)。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建与检查
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-## Learn More
+## 替换内容
 
-To learn more about Next.js, take a look at the following resources:
+- 外部链接：编辑 `src/config/site.ts` 中的 `externalLinks`。
+- 基础信息与 About 文案：编辑 `src/config/site.ts` 中的 `siteConfig`。
+- 画廊图片：将图片放入 `public/images/`，并更新 `src/data/gallery.ts`。推荐使用竖版图片，并为每张图片填写准确的 `alt`。
+- Hero 图片：替换 `public/images/hero-kiri.jpg`，保持同名即可。
+- 新闻：编辑 `src/data/news.ts`。
+- FAQ：编辑 `src/data/faq.ts`。
+- 社交分享图：替换 `public/og.jpg`。
+- 正式域名：部署时设置 `NEXT_PUBLIC_SITE_URL`，用于 sitemap、robots 与社交分享元数据。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 部署到 Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 将项目推送到 GitHub、GitLab 或 Bitbucket。
+2. 在 Vercel 选择 **Add New → Project** 并导入仓库。
+3. Framework Preset 选择 Next.js（通常会自动识别）。
+4. 添加环境变量 `NEXT_PUBLIC_SITE_URL`，值为正式网站地址。
+5. 点击 Deploy。后续推送会自动触发新部署。
 
-## Deploy on Vercel
+也可安装 Vercel CLI 后运行 `vercel`，按提示完成部署。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 主要目录
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/app/         页面入口、SEO、全局样式、sitemap 与 robots
+src/components/  各页面区块与交互组件
+src/config/      网站基础信息及外部链接
+src/data/        Gallery、News 与 FAQ 数据
+public/images/   本地图片素材
+```
+
+所有外部链接都会在新标签页打开，并带有 `noopener noreferrer` 安全属性。
