@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Orbit, X } from "lucide-react";
 import { useState } from "react";
 import type { Dictionary, Locale } from "@/i18n/dictionaries";
 import { LanguageSwitcher } from "./language-switcher";
@@ -16,11 +16,12 @@ export function Navbar({
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const nav = [
-    [dict.nav.home, "home"],
-    [dict.nav.about, "about"],
+    [dict.nav.profile, "profile"],
+    [dict.nav.photoBooks, "photo-books"],
     [dict.nav.gallery, "gallery"],
     [dict.nav.news, "news"],
     [dict.nav.links, "links"],
+    [dict.nav.contact, "contact"],
   ] as const;
 
   return (
@@ -31,15 +32,15 @@ export function Navbar({
           className="flex shrink-0 items-center gap-3 font-semibold tracking-wide"
           onClick={() => setOpen(false)}
         >
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-violet-500 to-pink-500 text-xs">
-            K
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-violet-300/25 bg-violet-400/[.06] text-violet-200">
+            <Orbit size={18} strokeWidth={1.4} aria-hidden="true" />
           </span>
           <span className="hidden sm:inline">
             KIRI <span className="text-zinc-500">UNIVERSE</span>
           </span>
         </a>
-        <div className="hidden items-center gap-7 md:flex">
-          <nav className="flex gap-7" aria-label={dict.nav.ariaLabel}>
+        <div className="hidden items-center gap-5 md:flex">
+          <nav className="flex gap-5 lg:gap-7" aria-label={dict.nav.ariaLabel}>
             {nav.map(([label, id]) => (
               <a
                 key={id}

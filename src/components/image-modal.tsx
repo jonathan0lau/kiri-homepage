@@ -73,9 +73,12 @@ export function ImageModal({
             >
               <X />
             </button>
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-4 py-2 text-sm text-white">
-              {item.label}
-            </p>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-5 py-2 text-center backdrop-blur-md">
+              <p className="text-[9px] uppercase tracking-[.18em] text-violet-300">
+                {item.collection}
+              </p>
+              <p className="mt-1 text-sm text-white">{item.label}</p>
+            </div>
           </motion.div>
         </motion.div>
       )}

@@ -53,7 +53,7 @@ export async function generateMetadata({
           url: "/og.jpg",
           width: 1024,
           height: 1024,
-          alt: "Kiri Universe",
+          alt: "Kiri Universe — Kiri character visual",
         },
       ],
     },
