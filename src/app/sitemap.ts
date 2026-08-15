@@ -5,6 +5,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://kiri-universe.vercel.app";
   const pages = [
     { path: "", priority: 1 },
+    { path: "/about", priority: 0.7 },
+    { path: "/universe", priority: 0.7 },
+    { path: "/products", priority: 0.9 },
+    { path: "/products/KIRI-2026-08", priority: 0.7 },
+    { path: "/faq", priority: 0.5 },
+    { path: "/community", priority: 0.6 },
     { path: "/photo-books", priority: 0.8 },
     { path: "/privacy", priority: 0.3 },
     { path: "/terms", priority: 0.3 },
