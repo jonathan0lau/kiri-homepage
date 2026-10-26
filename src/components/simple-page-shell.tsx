@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowLeft, MessageCircle } from "lucide-react";
 import type { Locale } from "@/i18n/dictionaries";
-import { externalLinks } from "@/config/site";
 
 export function SimplePageShell({
   locale,
@@ -25,10 +24,10 @@ export function SimplePageShell({
             <ArrowLeft size={16} aria-hidden="true" />
             Kiri Universe
           </Link>
-          <a href={externalLinks.discord} className="inline-flex items-center gap-2 text-sm text-violet-200 transition hover:text-white">
+          <Link href={`/${locale}/membership`} className="inline-flex items-center gap-2 text-sm text-violet-200 transition hover:text-white">
             <MessageCircle size={16} aria-hidden="true" />
-            Discord
-          </a>
+            参加方法
+          </Link>
         </div>
       </header>
       <section className="section">

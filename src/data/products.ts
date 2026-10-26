@@ -30,7 +30,7 @@ export const publicProducts: PublicProduct[] = [
     ],
     content_count_label: "写真120张 / 视频2段",
     file_size_label: "1.8GB",
-    discord_url: "https://discord.gg/",
+    discord_url: "https://discord.gg/Bxw8Nz7KgF",
     status: "SALE",
   },
 ];

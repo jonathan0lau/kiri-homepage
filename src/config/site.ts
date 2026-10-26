@@ -7,7 +7,7 @@ export const siteConfig = {
 } as const;
 
 export const externalLinks = {
-  x: "https://x.com/",
-  fantia: "https://fantia.jp/",
-  discord: "https://discord.gg/your-invite-code",
+  x: "https://x.com/kirikirimai1120",
+  fantia: "https://fantia.jp/fanclubs/221384",
+  discord: "https://discord.gg/Bxw8Nz7KgF",
 } as const;

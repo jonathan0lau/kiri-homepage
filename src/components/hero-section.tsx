@@ -7,7 +7,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { externalLinks } from "@/config/site";
 import { ExternalLinkButton } from "./external-link-button";
 
-export function HeroSection({ dict }: { dict: Dictionary["hero"] }) {
+export function HeroSection({ dict, locale = "ja" }: { dict: Dictionary["hero"]; locale?: string }) {
   const reduce = useReducedMotion();
 
   return (
@@ -53,6 +53,7 @@ export function HeroSection({ dict }: { dict: Dictionary["hero"] }) {
             <BookOpen size={18} aria-hidden="true" />
             {dict.viewPhotoBooks}
           </motion.a>
+          <div className="mt-5 flex flex-wrap gap-5 text-sm text-violet-200"><a href={`/${locale}/membership`}>会員プランを見る →</a><a href={`/${locale}/events`}>イベントを見る →</a></div>
           <div className="mt-8 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.2em] text-zinc-600">
             <span className="h-px w-8 bg-white/10" />
             {dict.portalsLabel}
