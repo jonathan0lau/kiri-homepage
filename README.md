@@ -1,3 +1,5 @@
+> **2026-10-26 Kiri Club P0**：主页现通过共享 Python 后台管理消息、活动、作品、系列和会员方案。请先阅读 [CLUB-P0.md](CLUB-P0.md)。下文保留原展示站说明；旧的 dictionaries 新闻录入、静态写真目录及手工商品 JSON 流程已由共享后台取代。
+
 # Kiri Universe
 
 Kiri Universe 的多语言原创 IP 门户。网站以角色 Kiri 的人设与写真集为核心，使用 Next.js、TypeScript、Tailwind CSS 与 Framer Motion 构建，支持中文、日文、英文、响应式布局，并可直接部署至 Vercel。

@@ -6,10 +6,7 @@ function preferredLocale(request: NextRequest): Locale {
   const saved = request.cookies.get("kiri-locale")?.value;
   if (saved && hasLocale(saved)) return saved;
 
-  const accepted = request.headers.get("accept-language")?.toLowerCase() ?? "";
-  if (accepted.includes("ja")) return "ja";
-  if (accepted.includes("zh")) return "zh";
-  return "en";
+  return "ja";
 }
 
 export function proxy(request: NextRequest) {

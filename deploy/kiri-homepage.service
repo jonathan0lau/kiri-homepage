@@ -1,0 +1,16 @@
+[Unit]
+Description=Kiri Club homepage
+After=network.target kiri-club-admin.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/WorkSpace/kiri-homepage
+EnvironmentFile=%h/.config/kiri-club/homepage.env
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start --hostname 0.0.0.0 --port 13000
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target
